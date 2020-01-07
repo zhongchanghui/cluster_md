@@ -1,0 +1,18 @@
+PURPOSE of /tests/kernel/storage/mdadm/cluster_md
+Description: Test the function for cluster with RAID1.
+
+1.Prepare a machine with a memory greater than or equal to 16G (small memory will cause the virtual machine to run slowly, and data will not be synchronized in time when I/O is executed)
+
+2.Download RHEL OS iso (such as:RHEL-8.1.0-20190806.2-x86_64-dvd1.iso) and store it in the /home/os folder
+
+3.Download (kernel-4.18.0-136.el8.test.x86_64.rpm,kernel-modules-4.18.0-136.el8.test.x86_64.rpm,kernel-core-4.18.0-136.el8.test.x86_64.rpm) which enable cluster function already.then store them to /home/os/kernel136 folder
+
+4.you need Download beaker test repos (Reserver a machine in beaker environment then copies it's /etc/yum.repos.d folder to your local machine)
+yum install -y beakerlib-redhat.noarch
+yum install -y kernel-kernel-storage-mdadm-include.noarch
+
+4.make run
+
+or you can Execute them one by one:./case.....sh
+
+The order in which the scripts are executed can be seen in runtest.sh
